@@ -7,10 +7,7 @@ export default function AuthScreen() {
       >
           <View>
         <Text>Create Account</Text>
-
-      </View>
-      <View>
-        <TextInput label="Email" />
+        <TextInput autoCapitalize="none" placeholder="email@gmail.com" keyboardType="email-address" />
       </View>
     </KeyboardAvoidingView>
   );
