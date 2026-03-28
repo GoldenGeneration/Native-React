@@ -1,16 +1,26 @@
 import { Tabs } from "expo-router";
 
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 import AntDesign from "@expo/vector-icons/AntDesign";
 import Entypo from "@expo/vector-icons/Entypo";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
-import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 
 export default function TabsLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveBackgroundColor: "rgba(34, 0, 255, 0.06)",
-        tabBarActiveTintColor: "red",
+        headerStyle: { backgroundColor: "#f5f5f5" },
+        headerShadowVisible: false,
+        tabBarStyle: {
+          backgroundColor: "#f5f5f5",
+          borderTopWidth: 0,
+          elevation: 0,
+          shadowOpacity: 0,
+        },
+        tabBarActiveTintColor: "#6200EE",
+        tabBarInactiveTintColor: "#666",
+        tabBarActiveBackgroundColor: "#ffdddd74",
       }}
     >
       <Tabs.Screen
@@ -27,12 +37,28 @@ export default function TabsLayout() {
         }}
       />
       <Tabs.Screen
-        name="login"
+        name="streaks"
         options={{
-          title: "Login",
-          tabBarIcon: ({ color }) => (
-
-            <Entypo name="login" size={24} color={color} />
+          title: "Streaks",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="chart-line"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tabs.Screen
+        name="addHabit"
+        options={{
+          title: "Add Habit",
+          tabBarIcon: ({ color, size }) => (
+            <MaterialCommunityIcons
+              name="plus-circle"
+              size={size}
+              color={color}
+            />
           ),
         }}
       />
